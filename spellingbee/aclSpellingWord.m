@@ -15,15 +15,7 @@
 @synthesize origin = _origin;
 @synthesize partOfSpeech = _partOfSpeech;
 
-- (id)initWithUniqueId:(int)uniqueId word:(NSString *)word origin:(NSString *)origin partOfSpeech:(NSString *) partOfSpeech {
-    if ((self = [super init])) {
-        self.uniqueId = uniqueId;
-        self.word = word;
-        self.origin = origin;
-        self.partOfSpeech = partOfSpeech;
-    }
-    return self;
-}
+
 
 - (void) dealloc {
     self.word = nil;

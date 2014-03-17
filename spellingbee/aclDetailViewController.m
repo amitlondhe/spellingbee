@@ -7,6 +7,7 @@
 //
 
 #import "aclDetailViewController.h"
+#import "aclSpellingWord.h"
 
 @interface aclDetailViewController ()
 - (void)configureView;
@@ -16,23 +17,30 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailItem:(aclSpellingWord*)newDetailItem
 {
+    NSLog(@"In setDetailItem");
+    NSLog(@"In setDetailItem %d: %@, %@, %@", newDetailItem.uniqueId, newDetailItem.word, newDetailItem.origin, newDetailItem.partOfSpeech);
+    
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
         
         // Update the view.
         [self configureView];
     }
+    NSLog(@"End setDetailItem");
 }
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
+    
+    NSLog(@"In configureView %d: %@, %@, %@", self.detailItem.uniqueId, self.detailItem.word, self.detailItem.origin,self.detailItem.partOfSpeech);
+    
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem word];
-        self.Origin.text = [self.detailItem origin];
+        self.word.text = self.detailItem.word;
+        self.origin.text = self.detailItem.origin;
+        self.partOfSpeech.text = self.detailItem.partOfSpeech;
     }
 }
 

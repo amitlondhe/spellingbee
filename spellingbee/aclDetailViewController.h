@@ -13,7 +13,9 @@
 
 @property (strong, nonatomic) aclSpellingWord *detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *Origin;
+@property (weak, nonatomic) IBOutlet UILabel *word;
+@property (weak, nonatomic) IBOutlet UILabel *origin;
+@property (weak, nonatomic) IBOutlet UILabel *partOfSpeech;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
 @end

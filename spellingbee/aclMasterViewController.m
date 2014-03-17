@@ -123,10 +123,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"In the segue 1");
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         aclSpellingWord *spellingWordInfo = spellingWordsInfos[indexPath.row];
+        NSLog(@"In the segue 2 %d: %@, %@, %@", spellingWordInfo.uniqueId, spellingWordInfo.word, spellingWordInfo.origin, spellingWordInfo.partOfSpeech);
         [[segue destinationViewController] setDetailItem:spellingWordInfo];
+        NSLog(@"Ending segue");
     }
 }
 
