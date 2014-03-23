@@ -44,9 +44,9 @@
     
     NSLog(@"viewDidLoad after getting spellingwords");
     
-    for (aclSpellingWord *info in spellingWordsInfos) {
-        NSLog(@"In aclMasterViewController %d: %@, %@, %@", info.uniqueId, info.word, info.origin, info.partOfSpeech);
-    }
+//    for (aclSpellingWord *info in spellingWordsInfos) {
+//        NSLog(@"In aclMasterViewController %d: %@, %@, %@", info.uniqueId, info.word, info.origin, info.partOfSpeech);
+//    }
 }
 
 
@@ -127,7 +127,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         aclSpellingWord *spellingWordInfo = spellingWordsInfos[indexPath.row];
-        NSLog(@"In the segue 2 %d: %@, %@, %@", spellingWordInfo.uniqueId, spellingWordInfo.word, spellingWordInfo.origin, spellingWordInfo.partOfSpeech);
+//        NSLog(@"In the segue 2 %d: %@, %@, %@", spellingWordInfo.uniqueId, spellingWordInfo.word, spellingWordInfo.origin, spellingWordInfo.partOfSpeech);
         [[segue destinationViewController] setDetailItem:spellingWordInfo];
         NSLog(@"Ending segue");
     }

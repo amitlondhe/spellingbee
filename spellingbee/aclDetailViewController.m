@@ -20,7 +20,7 @@
 - (void)setDetailItem:(aclSpellingWord*)newDetailItem
 {
     NSLog(@"In setDetailItem");
-    NSLog(@"In setDetailItem %d: %@, %@, %@", newDetailItem.uniqueId, newDetailItem.word, newDetailItem.origin, newDetailItem.partOfSpeech);
+//    NSLog(@"In setDetailItem %d: %@, %@, %@", newDetailItem.uniqueId, newDetailItem.word, newDetailItem.origin, newDetailItem.partOfSpeech);
     
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -35,7 +35,7 @@
 {
     // Update the user interface for the detail item.
     
-    NSLog(@"In configureView %d: %@, %@, %@", self.detailItem.uniqueId, self.detailItem.word, self.detailItem.origin,self.detailItem.partOfSpeech);
+//    NSLog(@"In configureView %d: %@, %@, %@", self.detailItem.uniqueId, self.detailItem.word, self.detailItem.origin,self.detailItem.partOfSpeech);
     
     if (self.detailItem) {
         self.word.text = self.detailItem.word;

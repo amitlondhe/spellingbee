@@ -82,7 +82,7 @@ static aclSpellingBeeDatabase *_database;
     }
     */
     
-    NSString *query = @"SELECT id, spelling_word, origin, part_of_speech FROM words;";
+    NSString *query = @"SELECT id, lower(word), origin, part_of_speech FROM spellings order by lower(word) asc;";
     sqlite3_stmt *statement;
     int sqlReturnStatus = sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil);
     NSLog(@"Executing statement returnStatus -  %d",sqlReturnStatus);
@@ -91,7 +91,7 @@ static aclSpellingBeeDatabase *_database;
         
         while (sqlite3_step(statement) == SQLITE_ROW) {
             
-            NSLog(@"Here in while");
+            //NSLog(@"Here in while");
 
             int uniqueId = sqlite3_column_int(statement, 0);
             char *spellingWordChars = (char *) sqlite3_column_text(statement, 1);
