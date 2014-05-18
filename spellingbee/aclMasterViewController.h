@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface aclMasterViewController : UITableViewController
+@interface aclMasterViewController : UITableViewController <UISearchDisplayDelegate,UISearchBarDelegate>
+
 
 @end

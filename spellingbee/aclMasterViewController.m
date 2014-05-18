@@ -16,6 +16,9 @@
     NSMutableArray *_objects;
     NSArray *spellingWordsInfos;
 }
+
+@property (nonatomic) NSMutableArray *searchResults;
+
 @end
 
 @implementation aclMasterViewController
@@ -43,6 +46,7 @@
     spellingWordsInfos = [aclSpellingBeeDatabase database].spellingWords;
     
     NSLog(@"viewDidLoad after getting spellingwords");
+    
     
 //    for (aclSpellingWord *info in spellingWordsInfos) {
 //        NSLog(@"In aclMasterViewController %d: %@, %@, %@", info.uniqueId, info.word, info.origin, info.partOfSpeech);
@@ -105,6 +109,7 @@
     }
 }
 
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -131,6 +136,15 @@
         [[segue destinationViewController] setDetailItem:spellingWordInfo];
         NSLog(@"Ending segue");
     }
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    NSLog(@"Search String is %s",searchString);
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 
 @end
